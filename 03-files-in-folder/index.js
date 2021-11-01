@@ -18,7 +18,7 @@ async function folderReader(folder){
     if (!item.isDirectory()) {
       fs.stat(path.join(testFolderPath, item.name)).then(stats => {
         //b to kb (1024)
-        const prettySize = (Math.floor(stats.size/1024)) +'.' + stats.size%1024+'kb' 
+        const prettySize = (Math.floor(stats.size/1024)) +'.' + stats.size%1024+'kb'; 
         // Вывод данных о файле в консоль
         console.log(item.name.split('.').join(' - ') + ' - ' + prettySize);
       });
