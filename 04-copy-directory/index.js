@@ -1,5 +1,5 @@
 // Импорт всех требуемых модулей
-const fs = require('fs/promises');
+const fs = require('fs').promises;
 const path = require('path');
 
 
@@ -16,7 +16,7 @@ async function copyDir(src, dst){
   await fs.rmdir(dst, {recursive: true});
   // Чтение содержимого папки files
   const folderItems = await fs.readdir(src,{withFileTypes: true});
-  fs.mkdir(copyFolderPath,{recursive:true});
+  fs.mkdir(dst,{recursive:true});
   folderItems.forEach(item => {
   // Копирование файлов из папки files в папку files-copy  
     // if dir => copyDir, else => copy this file
