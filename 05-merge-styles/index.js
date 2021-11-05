@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fsPr = require('fs/promises');
+const fsPr = require('fs').promises;
 const path = require('path');
 
 

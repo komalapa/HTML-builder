@@ -1,7 +1,7 @@
 
 
 // Импорт всех требуемых модулей
-const fs = require('fs/promises');
+const fs = require('fs').promises;
 const path = require('path');
 
 // Чтение содержимого папки secret-folder
