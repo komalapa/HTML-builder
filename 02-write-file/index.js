@@ -18,6 +18,7 @@ function writeOutput (outputFile){
 
 // Вывод в консоль приветственного сообщения
 console.log(`All your input will be saved in file: ${testFilePath} \n Enter 'exit' to stop`);
+fs.writeFile(testFilePath, '', function(){console.log(`File ${testFilePath} created`);});
 
 // Ожидание ввода текста пользователем, с дальнейшей проверкой ввода на наличие ключевого слова exit
 

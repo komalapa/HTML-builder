@@ -12,8 +12,12 @@ const copyFolderPath =path.join(__dirname, copyFolderName);
 
 async function copyDir(src, dst){
   console.log(`COPY ${src} TO ${dst}`);
-
-  await fs.rmdir(dst, {recursive: true});
+  try{
+    await fs.rmdir(dst, {recursive: true});
+  }
+  catch{
+    console.log(`new folder ${dst}`);
+  }
   // Чтение содержимого папки files
   const folderItems = await fs.readdir(src,{withFileTypes: true});
   fs.mkdir(dst,{recursive:true});

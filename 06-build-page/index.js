@@ -130,8 +130,12 @@ folderCompiler(path.join(__dirname, 'styles'), path.join(PROJ_DIST_DIR, 'style.c
 
 async function copyDir(src, dst){
   console.log(`COPY ${src} TO ${dst}`);
-
-  await fsPr.rmdir(dst, {recursive: true});
+  try{
+    await fsPr.rmdir(dst, {recursive: true});
+  }
+  catch{
+    console.log('nothing to remove');
+  }
   const folderItems = await fsPr.readdir(src,{withFileTypes: true}, (err) => {
     if (err) throw err;
   });
